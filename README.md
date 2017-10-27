@@ -1,5 +1,3 @@
-# go-kcl
-
 # Introduction
 This package is a simple and somewhat naïve client library for Kinesis. It was developed in order to provide an easy way to read from a Kinesis stream. We simply get the shards for the stream, poll each shard for new records, and return them to a handler function, from which you can do whatever you want.
 
