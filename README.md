@@ -56,10 +56,10 @@ It is important to have some record of this in persitent storage in case your ap
 If you are running in a distributed fashion, your store should be safe for concurrent use.
 
 **Iterator Types**
-* Latest - you will start with the next record that is put onto the stream.
-* Trim Horizon - you will start with the oldest record on the stream, and work towards the head.
-* At Sequence Number - you will start at the given sequence number. Sequence numbers are sequential since the beginning of time for each shard.
-* After Sequence Number - similar to At Sequence Number, but after.
-* At Timestamp - you will start at the first record at a given timestamp and work towards the head.
+* **LATEST** - you will start with the next record that is put onto the stream.
+* **TRIM_HORIZON** - you will start with the oldest record on the stream, and work towards the head.
+* **AT_SEQUENCE_NUMBER** - you will start at the given sequence number. Sequence numbers are sequential since the beginning of time for each shard.
+* **AFTER_SEQUENCE_NUMBER** - similar to At Sequence Number, but after.
+* **AT_TIMESTAMP** - you will start at the first record at a given timestamp and work towards the head.
 
 _The iterator type only matters for the first time you pull records, after that, you will get records in order while working towards the head._
