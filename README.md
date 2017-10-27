@@ -63,3 +63,10 @@ If you are running in a distributed fashion, your store should be safe for concu
 * **AT_TIMESTAMP** - you will start at the first record at a given timestamp and work towards the head.
 
 _The iterator type only matters for the first time you pull records, after that, you will get records in order while working towards the head._
+
+# License
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
