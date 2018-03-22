@@ -2,8 +2,9 @@ package kcl
 
 import (
 	"fmt"
-	"github.com/aws/aws-sdk-go/aws"
 	"time"
+
+	"github.com/aws/aws-sdk-go/aws"
 
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/kinesis"
@@ -74,8 +75,8 @@ type HandlerFunc func(records []*kinesis.Record)
 // NewStream will return a pointer to a stream that you can listen on. Stream is capable of
 // managing multiple shards, printing out log statements, and polling Kinesis at a regular
 // interval.
-func NewStream(sess *session.Session, stream string, store Store, config Config) (*Stream, error) {
-	svc := kinesis.New(sess)
+func NewStream(sess *session.Session, kinesisEndpoint string, stream string, store Store, config Config) (*Stream, error) {
+	svc := kinesis.New(sess, &aws.Config{Endpoint: aws.String(kinesisEndpoint)})
 	resp, err := svc.DescribeStream(&kinesis.DescribeStreamInput{
 		StreamName: aws.String(stream),
 	})
