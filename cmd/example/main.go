@@ -22,7 +22,7 @@ func main() {
 		Interval:     time.Millisecond * 1000,
 		IteratorType: kcl.IteratorTypeLatest,
 	}
-	k, err := kcl.NewStream(sess, os.Getenv("AWS_KINESIS_STREAM"), s, config)
+	k, err := kcl.NewStream(sess, os.Getenv("AWS_KINESIS_ENDPOINT"), os.Getenv("AWS_KINESIS_STREAM"), s, config)
 	if err != nil {
 		panic(err)
 	}
